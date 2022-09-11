@@ -47,7 +47,7 @@ require('@electron/remote/main').enable(win.webContents);
 ```
 
 ## Options
-`openProcessManager` function can take options in paramters
+`processManager.open` function can take options in paramters
 
 #### options.defaultSorting
 **defaultSorting.how**: `'ascending' | 'descending'`

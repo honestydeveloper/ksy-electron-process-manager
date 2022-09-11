@@ -9,8 +9,6 @@ So I have upgraded this package.
 
 It opens a window displaying a table of every processes run by the Electron application with information (type, URL for `webContents`, memory..).
 
-[![npm version](https://badge.fury.io/js/ksy-electron-process-manager.svg)](https://badge.fury.io/js/ksy-electron-process-manager)
-
 ![screenshot](https://github.com/honestydeveloper/ksy-electron-process-manager/blob/main/.github/screenshots/window.png)
 
 It can be useful to debug performance of an app with several `webview`.

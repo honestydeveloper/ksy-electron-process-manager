@@ -11,7 +11,7 @@ It opens a window displaying a table of every processes run by the Electron appl
 
 [![npm version](https://badge.fury.io/js/ksy-electron-process-manager.svg)](https://badge.fury.io/js/ksy-electron-process-manager)
 
-![screenshot](https://github.com/getstation/ksy-electron-process-manager/raw/master/.github/screenshots/window.png)
+![screenshot](https://github.com/honestydeveloper/ksy-electron-process-manager/blob/main/.github/screenshots/window.png)
 
 It can be useful to debug performance of an app with several `webview`.
 

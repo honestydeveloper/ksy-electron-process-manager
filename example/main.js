@@ -28,6 +28,7 @@ app.once('ready', function () {
             label: 'Open Process Manager',
             click: () => {
               const win = processManager.open({
+                showOpenDevToolsBtn: true,
                 defaultSorting: {
                   path: 'cpu.percentCPUUsage',
                   how: 'descending'

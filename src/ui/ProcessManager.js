@@ -5,7 +5,6 @@ import objectPath from 'object-path';
 
 import ProcessTable from './ProcessTable';
 import ToolBar from './ToolBar';
-
 export default class ProcessManager extends React.Component {
 
   constructor(props) {
@@ -18,6 +17,9 @@ export default class ProcessManager extends React.Component {
         how: null
       }
     };
+  }
+  componentDidMount() {
+    this.showDevToolButton = ipcRenderer.sendSync('is-devtool-button');
   }
 
   UNSAFE_componentWillMount() {
@@ -88,7 +90,7 @@ export default class ProcessManager extends React.Component {
             onKillClick={this.handleKillProcess.bind(this)}
             disabelOpenDevTool={!this.canOpenDevTool()}
             onOpenDevToolClick={this.handleOpenDevTool.bind(this)}
-
+            showDevToolButton={this.showDevToolButton}
           />
         </header>
         <div className="process-table-container">

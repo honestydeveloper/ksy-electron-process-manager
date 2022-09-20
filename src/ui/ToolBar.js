@@ -11,25 +11,29 @@ export default class ToolBar extends React.Component {
   }
 
   render() {
+    const {
+      showDevToolButton
+    } = this.props;
     return (
-        <div className="toolbar-actions">
-            <div className="btn-group">
-              <button
-                className="btn btn-default"
-                disabled={this.props.disableKill}
-                onClick={this.props.onKillClick}
-              >
-                End process
-              </button>
-              <button
-                className="btn btn-default"
-                disabled={this.props.disabelOpenDevTool}
-                onClick={this.props.onOpenDevToolClick}
-              >
-                Open Dev Tool
-              </button>
-            </div>
-          </div>
+      <div className="toolbar-actions">
+        <div className="btn-group">
+          <button
+            className="btn btn-default"
+            disabled={this.props.disableKill}
+            onClick={this.props.onKillClick}
+          >
+            End process
+          </button>
+          {showDevToolButton && <button
+            className="btn btn-default"
+            disabled={this.props.disabelOpenDevTool}
+            onClick={this.props.onOpenDevToolClick}
+          >
+            Open Dev Tool
+          </button>
+          }
+        </div>
+      </div>
     )
   }
 }

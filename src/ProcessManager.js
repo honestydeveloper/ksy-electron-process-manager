@@ -26,6 +26,14 @@ class ProcessManager extends EventEmitter {
     this.window.on('closed', () => this.window = null)
     this.emit('open-window', this.window);
 
+    this.isToolbar = options.isToolbar;
+    if (undefined === this.isToolbar) {
+      this.isToolbar = true;
+    }
+    ipcMain.on('is-toolbar', (event) => {
+      event.returnValue = this.isToolbar;
+    });
+
     this.showOpenDevToolsBtn = options.showOpenDevToolsBtn || false;
     ipcMain.on('is-devtool-button', (event) => {
       event.returnValue = this.showOpenDevToolsBtn;

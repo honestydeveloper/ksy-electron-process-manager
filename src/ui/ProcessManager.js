@@ -20,6 +20,7 @@ export default class ProcessManager extends React.Component {
   }
   componentDidMount() {
     this.showDevToolButton = ipcRenderer.sendSync('is-devtool-button');
+    this.isToolbar = ipcRenderer.sendSync('is-toolbar');
   }
 
   UNSAFE_componentWillMount() {
@@ -84,7 +85,7 @@ export default class ProcessManager extends React.Component {
 
     return (
       <div className="window">
-        <header className="toolbar toolbar-header">
+        {this.isToolbar && <header className="toolbar toolbar-header">
           <ToolBar
             disableKill={!this.canKill()}
             onKillClick={this.handleKillProcess.bind(this)}
@@ -92,7 +93,7 @@ export default class ProcessManager extends React.Component {
             onOpenDevToolClick={this.handleOpenDevTool.bind(this)}
             showDevToolButton={this.showDevToolButton}
           />
-        </header>
+        </header>}
         <div className="process-table-container">
           <ProcessTable
             processData={this.getProcessData()}
